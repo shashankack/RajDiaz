@@ -1,14 +1,14 @@
 from pathlib import Path
 import dj_database_url
-
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-w8ykpmxtmcf(nxebm883+^ni7!lllk$+gjh-nv2d21*cy0xxj='
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -76,7 +76,9 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgresql://admin:9vl4cjAoGCud83zWyCbyLRmRC8ImFc41@dpg-ctc8k60gph6c73adpa3g-a.oregon-postgres.render.com/raj_diamonds_db")
+database_url = os.environ.get('DATABASE_URL')
+
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 AUTH_USER_MODEL = 'api.User'
 
