@@ -9,8 +9,8 @@ const Header = ({ mode, setMode }) => {
 
   const handleLogout = () => {
     // Remove tokens from local storage
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
 
     // Redirect to login page
     navigate("/login");
