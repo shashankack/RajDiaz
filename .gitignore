@@ -1,0 +1,68 @@
+# General
+.DS_Store
+node_modules/
+.env
+*.log
+*.sqlite3
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.eggs/
+*.coverage
+.coverage.*
+*.py,cover
+*.pytest_cache/
+*.pyo
+.tox/
+.dist/
+build/
+htmlcov/
+*.mo
+*.pot
+
+# Django
+*.swp
+*.swo
+/staticfiles/
+media/
+.vscode/
+local_settings.py
+
+# React
+frontend/node_modules/
+frontend/.env
+frontend/build/
+frontend/.cache/
+
+# Docker
+*.dockerfile
+*.tar
+Dockerfile
+docker-compose*
+
+# IDEs and Text Editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS Generated
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+*.out
+*.pid
+
+# Other
+*.bak
+*.backup
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
