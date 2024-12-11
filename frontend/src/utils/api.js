@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: process.env.API_BASE_URL,
+  baseURL: "https://rajdiamonds-backend.onrender.com/api/v1/",
   headers: {
     "Content-Type": "application/json",
   },
