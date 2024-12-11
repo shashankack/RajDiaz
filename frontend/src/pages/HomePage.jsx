@@ -236,11 +236,24 @@ const HomePage = () => {
             placeholder="Search by name, email, or phone"
           />
           <Button
+            sx={{
+              display: { xs: "none", sm: "block" },
+            }}
             variant="contained"
             color="primary"
             onClick={() => handleOpen(null, "add")}
           >
             Add User
+          </Button>
+          <Button
+            sx={{
+              display: { xs: "block", sm: "none" },
+            }}
+            variant="contained"
+            color="primary"
+            onClick={() => handleOpen(null, "add")}
+          >
+            Add
           </Button>
         </Box>
       </Box>
@@ -258,8 +271,27 @@ const HomePage = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>First Name</TableCell>
-                <TableCell>Last Name</TableCell>
+                <TableCell
+                  sx={{
+                    display: { xs: "table-cell", sm: "none" }, // Hide on xs, show on sm+
+                  }}
+                >
+                  Name
+                </TableCell>
+                <TableCell
+                  sx={{
+                    display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                  }}
+                >
+                  First Name
+                </TableCell>
+                <TableCell
+                  sx={{
+                    display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                  }}
+                >
+                  Last Name
+                </TableCell>
                 <TableCell>Phone</TableCell>
                 <TableCell
                   sx={{
@@ -281,10 +313,35 @@ const HomePage = () => {
                       onClick={() => handleOpen(client, "view")}
                       style={{ cursor: "pointer" }}
                     >
-                      <TableCell>{client.firstName}</TableCell>
-                      <TableCell>{client.lastName}</TableCell>
+                      <TableCell
+                        sx={{
+                          display: { xs: "table-cell", sm: "none" }, // Hide on xs, show on sm+
+                        }}
+                      >
+                        {client.firstName} {client.lastName}
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                        }}
+                      >
+                        {client.firstName}
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                        }}
+                      >
+                        {client.lastName}
+                      </TableCell>
                       <TableCell>{client.phone}</TableCell>
-                      <TableCell>{client.sales}</TableCell>
+                      <TableCell
+                        sx={{
+                          display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                        }}
+                      >
+                        {client.sales}
+                      </TableCell>
                       <TableCell align="center">
                         <IconButton
                           color="primary"
