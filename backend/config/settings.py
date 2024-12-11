@@ -75,10 +75,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 database_url = os.environ.get('DATABASE_URL')
 
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES['default'] = dj_database_url.parse("postgresql://admin:9vl4cjAoGCud83zWyCbyLRmRC8ImFc41@dpg-ctc8k60gph6c73adpa3g-a.oregon-postgres.render.com/raj_diamonds_db")
 
 AUTH_USER_MODEL = 'api.User'
 
