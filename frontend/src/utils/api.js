@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "https://rajdiamonds-backend.onrender.com/api/v1/",
+  baseURL: process.env.API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -36,7 +36,7 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem("refreshToken");
         const response = await axios.post(
-          `${process.env.REACT_APP_API_BASE_URL || "https://rajdiamonds-backend.onrender.com/api/v1/"
+          `${process.env.API_BASE_URL || "https://rajdiamonds-backend.onrender.com/api/v1/"
           }token/refresh/`,
           { refresh: refreshToken }
         );
