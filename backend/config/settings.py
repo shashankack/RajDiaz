@@ -10,6 +10,8 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
+CORS_ALLOWED_ORIGINS = os.environ.get('ALLOWED_CORS_ORIGINS').split(' ')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,10 +35,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    "https://rajdiamonds-frontend.onrender.com",
 ]
 
 ROOT_URLCONF = 'config.urls'

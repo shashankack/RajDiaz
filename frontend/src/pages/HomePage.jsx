@@ -218,8 +218,8 @@ const HomePage = () => {
     <Box p={3}>
       <Box
         display="flex"
-        maxWidth={'1200px'}
-        margin={'3rem auto'}
+        maxWidth={"1200px"}
+        margin={"3rem auto"}
         justifyContent="space-between"
         alignItems="center"
         mb={2}
@@ -261,7 +261,13 @@ const HomePage = () => {
                 <TableCell>First Name</TableCell>
                 <TableCell>Last Name</TableCell>
                 <TableCell>Phone</TableCell>
-                <TableCell>Sales (₹)</TableCell>
+                <TableCell
+                  sx={{
+                    display: { xs: "none", sm: "table-cell" }, // Hide on xs, show on sm+
+                  }}
+                >
+                  Sales (₹)
+                </TableCell>
                 <TableCell align="center">Actions</TableCell>
               </TableRow>
             </TableHead>
