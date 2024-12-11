@@ -1,3 +1,4 @@
+from datetime import timedelta
 from pathlib import Path
 import dj_database_url
 import os
@@ -106,3 +107,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+}
